@@ -43,7 +43,7 @@ fn write(path: &str, records: &[Timestamp<MemInfo>]) -> Result<()> {
         .map_err(|e| Error::io(e, "Unable to open output"))?;
 
     for record in records {
-        serialize(&mut file, &record)?;
+        serialize(&mut file, record)?;
     }
     Ok(())
 }
